@@ -7,7 +7,7 @@ cd ~
 sudo apt install curl
 
 # Repository folder for zsh config files
-DOTFILES='https://raw.githubusercontent.com/Chenkail/dotfiles/main/zsh'
+DOTFILES='https://raw.githubusercontent.com/circumspect/dotfiles/main/zsh'
 
 # Install prezto
 if [ ! -d ".zprezto" ]; then
