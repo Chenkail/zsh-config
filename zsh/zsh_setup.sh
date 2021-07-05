@@ -28,11 +28,14 @@ fi
 
 # Config files
 echo "Copying config files:"
-curl ${DOTFILES}/.zpretzorc > zpretzorc.new
-curl ${DOTFILES}/.zshrc > zshrc.new
+curl ${DOTFILES}/.zpretzorc > ~/.zpretzorc
+curl ${DOTFILES}/.zshrc > ~/.zshrc
 
-mv zpretzorc.new "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zpretzorc
-mv zshrc.new "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zshrc
+# curl ${DOTFILES}/.zpretzorc > zpretzorc.new
+# curl ${DOTFILES}/.zshrc > zshrc.new
+
+# mv zpretzorc.new "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zpretzorc
+# mv zshrc.new "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zshrc
 echo
 
 # Set up thefuck
@@ -48,6 +51,10 @@ then
 else
   echo
 fi
+
+# Install p10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 # # Run p10k setup - DOESN'T WORK BECAUSE ZSH NEEDS TO RESTART
 # if read -q '?Configure p10k? (y/n) '
